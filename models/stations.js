@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const stationSchema = mongoose.Schema({
     name: {type: String, required: [true, 'The name of the station is required!'], trim: true},
-    email: {type: String, required: [true, 'The email for the station is required!'], trim: true},
+    email: {type: String, required: [true, 'The email for the station is required!'], trim: true, unique: true},
     phone: {type: String, required: [true, 'The phone number is required for the station!']},
     role: {type: String, required: [true, 'The role for station is required'], enum: ['admin', 'station'], default: 'station'},
     password: {type: String, required: [true, 'Password is required!']},

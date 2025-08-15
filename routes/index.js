@@ -6,8 +6,12 @@ router.get('/', (req, res) => res.sendFile('./public/index.html'));
 
 
 // stations
-import stations from './stations.js'
+import stations from './stations.js';
 router.use('/stations', stations);
+
+// sign in
+import signin from './signin.js';
+router.use('/sign-in', signin);
 
 
 

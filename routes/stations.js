@@ -21,24 +21,24 @@ router.get('/', getStations);
 router.put('/admin/new-station',upload.fields([{name: 'profile', maxCount: 1}, {name: 'stationImages', maxCount: 10}]), newStation);
 
 // edit station by admin
-router.patch('/admin/edit-station/:id', editStation);
+router.patch('/admin/edit-station/:id', upload.none(),  editStation);
 
 // password change by admin
-router.patch('/admin/change-password/:id', changePassword);
+router.patch('/admin/change-password/:id', upload.none(), changePassword);
 
 // edit station by owner
-router.patch('/my-station/edit', editStation);
+router.patch('/my-station/edit', upload.none(), editStation);
 
 // change password by user
-router.patch('/my-station/change-password', changePassword);
+router.patch('/my-station/change-password', upload.none(), changePassword);
 
 //change profile picture
-router.patch('/change-profile', changeMyProfile);
+router.patch('/change-profile', upload.single('profile'), changeMyProfile);
 
 // add station's image
-router.put('/my-station/images', addStationImages);
+router.put('/my-station/images', upload.array('stationImages'), addStationImages);
 
 // delete station images
-router.delete('/my-station/images', deleteStationImages);
+router.delete('/my-station/images', upload.none(), deleteStationImages);
 
 export default router;

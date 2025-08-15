@@ -50,7 +50,7 @@ export const newStation =  async (req, res) => {
         
     } catch (error) {
 
-        clog(error); // only in development
+        // clog(error); // only in development
 
         if (profile) deleter('./media', profile);
         deleter('./media', ...stationImages);
@@ -132,7 +132,9 @@ export const changePassword = async (req, res) => {
 
         const station = await Stations.findOne({_id: selfId});
 
-        if (bcrypt.compareSync(req.body.password, station.password)) {
+        const isMatched = await bcrypt.compare(req.body.password, station.password);
+
+        if (isMatched) {
             await Stations.findOneAndUpdate({_id: selfId}, {password: newPassword});
             return respond(res, 200);
         }
