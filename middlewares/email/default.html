@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        .header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Luggage Station App:</h3>
+        <div class="header">
+            <h1>Booking Confirmation</h1>
+        </div>
+        <p>Dear {{fullName}},</p>
+        <p>Please confirm your booking through the following link:</p>
+        <p><strong>Confirmation Link: </strong> <a href="{{link}}">{{link}}</a></p>
+        <br>
+        <p>Thank you for choosing our services!</p>
+        <p>Luggage Station App Team</p>
+    </div>
+
+</body>
+</html>

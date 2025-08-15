@@ -19,6 +19,18 @@ router.use('/bookings', bookings);
 
 
 
+// testing the email
+import sendEmail from '../middlewares/email/mailer.js';
+router.get('/testemail', async (req, res) => {
+    try {
+        const info = await sendEmail('smaeil.ahmadi@yahoo.com,', 'yooouu hoooo', 'hello my me!');
+        return res.status(200).send(info);
+    } catch (error) {
+       console.log(error);
+       return res.status(500).send(error);
+    }
+});
+
 // handling wrong endpoints : ******************************************************************************
 router.use( async (req, res) => {
     console.log(`[ip: ${req.ip}] got wrong Endpoint!: [${req.originalUrl}]`);
