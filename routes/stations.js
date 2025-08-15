@@ -1,12 +1,7 @@
 import express from 'express';
 
 const router = express.Router();
-
-import Stations from '../models/stations.js';
 import uploadHandler from '../middlewares/fileHandling/uploadHandler.js';
-import deleter from '../middlewares/fileHandling/deleter.js';
-import clog from '../middlewares/tools/consoleLog.js';
-import respond from '../middlewares/tools/httpRes.js';
 
 const upload = uploadHandler('./media');
 

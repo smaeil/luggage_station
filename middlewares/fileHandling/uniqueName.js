@@ -3,6 +3,12 @@ export const uniqueName = function() {
     return '' + ( parseFloat(now) * Math.ceil(Math.random() * 19));
 }
 
+export const uniqueNameHex = function () {
+    const now = Date.now();
+    const num = ( parseFloat(now) * Math.ceil(Math.random() * 19));
+    return num.toString(16);
+}
+
 const renamer = function (fileName) {
     fileName = fileName.split('.');
 

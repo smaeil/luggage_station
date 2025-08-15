@@ -13,6 +13,10 @@ router.use('/stations', stations);
 import signin from './signin.js';
 router.use('/sign-in', signin);
 
+// bookings
+import bookings from './bookings.js';
+router.use('/bookings', bookings);
+
 
 
 // handling wrong endpoints : ******************************************************************************
