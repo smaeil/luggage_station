@@ -11,12 +11,17 @@ export const toBook = async (req, res) => {
         const orderNumber = Number(uniqueName());
         const accessKey = uniqueNameHex();
 
+        // validateing the email and the dates:
+        
+
+
+
 
         return respond(res, 200,null ,{orderNumber, accessKey});
         
         
     } catch (error) {
-        return respond(res, 500);
+        return respond(res, 500, 'Server or Entry error!');
     }
 }
 

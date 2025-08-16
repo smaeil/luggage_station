@@ -21,9 +21,10 @@ router.use('/bookings', bookings);
 
 // testing the email
 import sendEmail from '../middlewares/email/mailer.js';
+import { link } from 'fs';
 router.get('/testemail', async (req, res) => {
     try {
-        const info = await sendEmail('smaeil.ahmadi@yahoo.com,', 'yooouu hoooo', 'hello my me!');
+        const info = await sendEmail('smaeil.ahmadi@yahoo.com,', 'yo', {fullName: 'Hassan', link: 'https://www.p30download.com'});
         return res.status(200).send(info);
     } catch (error) {
        console.log(error);
