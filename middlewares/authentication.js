@@ -35,9 +35,21 @@ export const adminCheck = function (req, res, next) {
         return res.status(401).json({msg: 'Unauthorized!'});
     }
     } catch (error) {
-      console.log(error);  
+      clog(error);  
     }
 }
 
+// check for station user
+export const stationCheck = function (req, res, next) {
+    try {
+    if (req.decoded.role === 'station') {
+        next();
+    } else {
+        return res.status(401).json({msg: 'Unauthorized!'});
+    }
+    } catch (error) {
+      clog(error);  
+    }
+}
 
 export default authentication;

@@ -7,7 +7,7 @@ const bookingSchema = mongoose.Schema({
     station: {type: mongoose.Schema.Types.ObjectId, ref: 'stations', required: [true, 'The sataions of storage is required!']},
     luggages: {type: [String], required: [true, 'The luggage is required!'], enum: ['20kg', '30kg', '40kg']},
     orderNumber: {type: Number, required: [true, 'The order number is required!']},
-    approved: {type: Boolean, required: [true, 'The approval is required!'], default: false},
+    confirmed: {type: Boolean, required: [true, 'The approval is required!'], default: false},
     from: {type: Date, required: [true, 'The starting date is required!']},
     to: {type: Date, required: [true, 'The End date is required!']},
     active: {type: Boolean, required: [true, 'The Activness statues is required'], default: true},

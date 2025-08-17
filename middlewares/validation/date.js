@@ -33,5 +33,5 @@ export const isDateBefore = function(firstDate, secondDate) {
     const dateA = typeof firstDate === 'string' ? parseDate(firstDate) : firstDate ;
     const dateB = typeof secondDate === 'string' ? parseDate(secondDate) : secondDate;
 
-    return dateA.getTime() < dateB.getTime();
+    return dateA.getTime() <= dateB.getTime();
 }
